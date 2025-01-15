@@ -3,6 +3,7 @@ from PIL import Image
 import torchvision.transforms as transforms
 from picture_resize import image_preprocessing
 
+
 # 确保定义了与训练时相同的模型结构
 class Net(torch.nn.Module):
     def __init__(self):
@@ -51,8 +52,17 @@ def test_mydata():
 
     # 推理
     output = model(input_image)
+    global probability, predict
     probability, predict = torch.max(output.data, dim=1)
     print("此手写图片值为：%d,其最大概率为：%.2f " % (predict[0], probability))
+
+
+def get_predict():
+    return predict[0]
+
+
+def get_probability():
+    return probability
 
 
 # 测试主函数
