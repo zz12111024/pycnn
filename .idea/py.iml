@@ -4,8 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="my_project" />
-    <orderEntry type="module" module-name="figma-to-html" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../figma-to-html/.idea/figma-to-html.iml" filepath="$PROJECT_DIR$/../../figma-to-html/.idea/figma-to-html.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../my_project/.idea/my_project.iml" filepath="$PROJECT_DIR$/../../my_project/.idea/my_project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/py.iml" filepath="$PROJECT_DIR$/.idea/py.iml" />
     </modules>
   </component>
