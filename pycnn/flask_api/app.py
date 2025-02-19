@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from pycnn.pycnn_test import test_mydata as test
+from pycnn.pycnn_test import test_mydata, get_predict, get_probability
 
 app = Flask(__name__)
 CORS(app)  # 允许跨域请求
@@ -9,8 +9,10 @@ CORS(app)  # 允许跨域请求
 @app.route('/api/process', methods=['GET', 'POST'])
 def process_data():
     if request.method == 'GET':
-        test()
-        return jsonify({"message": "This is a GET response."})
+        test_mydata()
+        probability = get_probability()
+        predict = get_predict()
+        return jsonify({"message": f"此手写图片值为：{predict[0]},其最大概率为：{probability}"})
     elif request.method == 'POST':
         data = request.json
         if not data or 'name' not in data:

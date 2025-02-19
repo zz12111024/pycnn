@@ -4,6 +4,7 @@ from tqdm import tqdm
 import matplotlib
 from torch.utils.data import DataLoader
 import matplotlib.pyplot
+import json
 
 
 class Net(torch.nn.Module):
@@ -112,6 +113,8 @@ matplotlib.pyplot.xlabel('Epoch')
 matplotlib.pyplot.ylabel('Accuracy')
 matplotlib.pyplot.show()
 
+with open('./history.json', 'w') as f:
+    json.dump(history, f)
 torch.save(net, './model.pth')
 torch.save(net.state_dict(), './model_weights.pth')
 

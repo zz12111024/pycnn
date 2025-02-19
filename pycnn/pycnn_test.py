@@ -33,7 +33,7 @@ class Net(torch.nn.Module):
 # 实例化模型
 model = Net()
 # 加载模型参数
-model.load_state_dict(torch.load('./model_weights.pth'))
+model.load_state_dict(torch.load('./model_weights.pth', map_location=torch.device('cpu')))
 model.eval()
 
 
@@ -54,7 +54,7 @@ def test_mydata():
     output = model(input_image)
     global probability, predict
     probability, predict = torch.max(output.data, dim=1)
-    print("此手写图片值为：%d,其最大概率为：%.2f " % (predict[0], probability))
+    print("此手写图片值为：%d,其最大概率为：%.2f " % (predict.item(), probability))
 
 
 def get_predict():
